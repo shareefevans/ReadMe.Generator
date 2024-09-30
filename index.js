@@ -1,6 +1,8 @@
+// import npm/node packages
 import inquirer from 'inquirer';
 import fs from 'fs';
 
+// creating an array that will store the different values available for each npm package
 const npmLicenses = [
   {
     npmName: 'inquirer',
@@ -23,6 +25,7 @@ const npmLicenses = [
   },
 ];
 
+// this function will loop through the npm licenses array to check if what the use has entered in licenses matches any of the options within the array, if the options do match then the function returns the name, badge, downloads nad license of the npm package otherwise, if it simply returns NA ( for this project we're justing ignoring the other npm packages in the array, so they'll return NA)
 const selectedLicenseInfo = (licenses) => {
   for (let i = 0; i < npmLicenses.length; i++) {
     if (npmLicenses[i].npmName === licenses[0]) {
@@ -42,6 +45,7 @@ const selectedLicenseInfo = (licenses) => {
   };
 };
 
+// function to generate the readMe file based of values stored in the parameters
 const generateReadMe = ({
   title,
   licenses,
@@ -115,6 +119,7 @@ ${licenses}:
     `;
 };
 
+// setting up the user prompts based of the response...
 inquirer
   .prompt([
     {
