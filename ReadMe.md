@@ -20,8 +20,6 @@ The ReadMe Generator is a product that prompts users with a variety of questions
 > [!IMPORTANT]
 > This application will require users to use terminal (Mac) or GitBash (Windows) for it to generate a readMe file/ or the command line in Vs Code for the product to work 🚨.
 
----
-
 1. Clone project from repository from this link [here](https://github.com/shareefevans/ReadMe.Generator).
 2. Open the project folder in a text editor such as `Vs Code` or alternative editors.
 3. Open the command line/terminal/gitbash and navigate to the appropriate folder labelled `src` where you'll see a `Js` labelled `index.js`, run `npm install` and follow the usage instructions below.
@@ -70,16 +68,12 @@ Checkout my github profile below 👇
 - GitHub Name: shareefevans
 - GitHub Link: [Follow link here](https://github.com/shareefevans)
 
----
-
 _If you have any questions, don't hesitate to reach out vie the emial address below_
 *shareef3vans@gmail.com*
 
 ## 🏆 License
 
 This project is not licensed
-
----
 
 ### inquirer:
 
