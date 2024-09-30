@@ -176,7 +176,7 @@ inquirer
   ])
   .then((response) => {
     const newReadMe = generateReadMe(response);
-    fs.writeFile('ReadMe_test.md', newReadMe, (err) => {
+    fs.writeFile('ReadMe.md', newReadMe, (err) => {
       err ? console.error(err) : console.log('Success 🎉!');
     });
   });

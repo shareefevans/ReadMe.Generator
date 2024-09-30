@@ -24,13 +24,13 @@ The ReadMe Generator is a product that prompts users with a variety of questions
 
 1. Clone project from repository from this link [here](https://github.com/shareefevans/ReadMe.Generator).
 2. Open the project folder in a text editor such as `Vs Code` or alternative editors.
-3. Open the command line/terminal/gitbash and navigate to the appropriate folder, run `npm install` and follow the usage instructions below.
+3. Open the command line/terminal/gitbash and navigate to the appropriate folder labelled `src` where you'll see a `Js` labelled `index.js`, run `npm install` and follow the usage instructions below.
 
 ## ✋ Usage
 
 1. open up your text editor.
 2. open up the command line in the text editor or terminal/gitbash.
-3. Navigate to the folder that contains the application in terminal.
+3. Navigate to the folder that contains the application in terminal (the folder labelled `src`).
 4. type in this command `node index.js` to being.
 5. fill out the prompts that are then presented one by one.
 6. when arriving at the licneces section use the arrows and spacebar to navigate and to select `inquirer`, then press enter.
@@ -55,9 +55,13 @@ _In order to run a simple test, utilise the following instructions below:_
 - **Github Link** : https://github.com/FakeGithubName
 - **Email** : fakeEmail@gmail.com
 
+_example:_
+
+![Terminal Screenshot](/assets/Screenshot%202024-10-01%20at%208.40.11 AM.png)
+
 ## 📺 Walkthrough
 
-[insert video link]
+[Follow Walkthrough link](https://drive.google.com/file/d/1gVu2dw27wfTeqGFiTvaBlkRsc9Lh7Xb2/view)
 
 ### ❓ Questions
 
