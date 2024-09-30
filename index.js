@@ -1,30 +1,58 @@
 import inquirer from 'inquirer';
 import fs from 'fs';
 
-const generateReadMe = ({}) => {
+const generateReadMe = ({
+  title,
+  description,
+  installation,
+  usage,
+  contribution,
+  test,
+}) => {
   return `
-    # ${title} 
+# ${title}
 
-    ## Description
-    ${description}
+## 🏆 License
+${licenses}:
+![Inquirer Version](https://img.shields.io/npm/v/inquirer.svg?label=Inquirer)
+![NPM Downloads](https://img.shields.io/npm/dm/inquirer)
+![NPM License](https://img.shields.io/npm/l/inquirer)
+_This licence is covered under the MIT license • Copyright (c) 2023 Simon Boudrias (twitter: @vaxilart)_
+
+## Description
+${description}
     
-    ### Table of Contents
-     - [Installation](#installation)
-     - [Usage](#usage)
-     - [Contributing](#contributing)
-     - [Tests](#tests)
+### Table of Contents
 
-    ## Installation
-    ${installation}
+ * _[Installation](#installation)_
+ * _[Usage](#usage)_
+ * _[Contributing](#contributing)_
+ * _[Tests](#tests)_
+ * _[Walkthrough](#walkthrough)_
+ * _[Questions](#questions)_
 
-    ## Usage
-    ${usage}
+## Installation
+${installation}
 
-    ## Contributing
-    ${contribution}
+## Usage
+${usage}
 
-    ## Tests
-    ${test}
+## Contributing
+${contribution}
+
+## Tests
+${test}
+
+## Walkthrough
+[insert video link]
+
+### Questions
+
+Checkout my github profile below 👇
+*[${github}](${gitLink})*
+
+_If you have any questions, don't hesitate to reach out vie the emial address below_
+*${email}*
     `;
 };
 
@@ -48,7 +76,7 @@ inquirer
     {
       type: 'input',
       name: 'usage',
-      message: 'Describe the usabe information! 🧐',
+      message: 'Describe the usage information! 🧐',
     },
     {
       type: 'input',
@@ -56,7 +84,7 @@ inquirer
       message: 'Are there any contribution guidelines to follow? 🧐',
     },
     {
-      type: 'inpu📧t',
+      type: 'input',
       name: 'test',
       message: 'Are there any test instructions? 🧐',
     },
@@ -64,12 +92,17 @@ inquirer
       type: 'checkbox',
       name: 'licenses',
       message: 'Select any relevant licenses below. 👇',
-      choices: ['inquirer', 'color', 'prettier'],
+      choices: ['inquirer'],
     },
     {
       type: 'input',
       name: 'github',
       message: 'What is your github username? 🚀',
+    },
+    {
+      type: 'input',
+      name: 'gitLink',
+      message: 'Paste the link to your github profile',
     },
     {
       type: 'input',
