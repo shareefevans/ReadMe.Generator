@@ -1,58 +1,117 @@
 import inquirer from 'inquirer';
 import fs from 'fs';
 
+const npmLicenses = [
+  {
+    npmName: 'inquirer',
+    badge:
+      '![Inquirer Version](https://img.shields.io/npm/v/inquirer.svg?label=Inquirer)',
+    downloads: '![NPM Downloads](https://img.shields.io/npm/dm/inquirer)',
+    license: '![NPM License](https://img.shields.io/npm/l/inquirer)',
+  },
+  {
+    npmName: '',
+    badge: '',
+    downloads: '',
+    license: '',
+  },
+  {
+    npmName: '',
+    badge: '',
+    downloads: '',
+    license: '',
+  },
+];
+
+const selectedLicenseInfo = (licenses) => {
+  for (let i = 0; i < npmLicenses.length; i++) {
+    if (npmLicenses[i].npmName === licenses[0]) {
+      return {
+        name: npmLicenses[i].npmName,
+        badge: npmLicenses[i].badge,
+        downloads: npmLicenses[i].downloads,
+        license: npmLicenses[i].license,
+      };
+    }
+  }
+  return {
+    name: 'NA',
+    badge: 'NA',
+    downloads: 'NA',
+    license: 'NA',
+  };
+};
+
 const generateReadMe = ({
   title,
+  licenses,
   description,
   installation,
   usage,
   contribution,
   test,
+  github,
+  gitlink,
+  email,
 }) => {
+  const info = selectedLicenseInfo(licenses);
   return `
 # ${title}
+${info.badge}
 
-## 🏆 License
-${licenses}:
-![Inquirer Version](https://img.shields.io/npm/v/inquirer.svg?label=Inquirer)
-![NPM Downloads](https://img.shields.io/npm/dm/inquirer)
-![NPM License](https://img.shields.io/npm/l/inquirer)
-_This licence is covered under the MIT license • Copyright (c) 2023 Simon Boudrias (twitter: @vaxilart)_
+## 🚀 Description
 
-## Description
 ${description}
     
-### Table of Contents
+### 📋 Table of Contents
 
- * _[Installation](#installation)_
- * _[Usage](#usage)_
- * _[Contributing](#contributing)_
- * _[Tests](#tests)_
- * _[Walkthrough](#walkthrough)_
- * _[Questions](#questions)_
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Walkthrough](#walkthrough)
+* [Questions](#questions)
 
-## Installation
+## 🔌 Installation
+
 ${installation}
 
-## Usage
+## ✋ Usage
+
 ${usage}
 
-## Contributing
+## ➕ Contributing
+
 ${contribution}
 
-## Tests
+## ✅ Tests
+
 ${test}
 
-## Walkthrough
+## 📺 Walkthrough
+
 [insert video link]
 
-### Questions
+### ❓ Questions
 
 Checkout my github profile below 👇
-*[${github}](${gitLink})*
+* GitHub: ${github}
+* GitLink: ${gitlink}
+
+---
 
 _If you have any questions, don't hesitate to reach out vie the emial address below_
 *${email}*
+
+## 🏆 License
+
+This project is not licensed
+
+----
+
+${licenses}:
+* Donwloads: ${info.downloads}
+* License: ${info.license}
     `;
 };
 
@@ -92,7 +151,7 @@ inquirer
       type: 'checkbox',
       name: 'licenses',
       message: 'Select any relevant licenses below. 👇',
-      choices: ['inquirer'],
+      choices: ['inquirer', 'color'],
     },
     {
       type: 'input',
