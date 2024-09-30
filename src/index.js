@@ -25,7 +25,7 @@ const npmLicenses = [
   },
 ];
 
-// this function will loop through the npm licenses array to check if what the use has entered in licenses matches any of the options within the array, if the options do match then the function returns the name, badge, downloads nad license of the npm package otherwise, if it simply returns NA ( for this project we're justing ignoring the other npm packages in the array, so they'll return NA)
+// this function will loop through the npm licenses array to check if what the user has entered in licenses matches any of the options within the array, if the options do match then the function returns the name, badge, downloads and license of the npm package otherwise, if it simply returns NA ( for this project we're justing ignoring the other npm packages in the array, so they'll return NA hence the empty strings for their objects in the array above)
 const selectedLicenseInfo = (licenses) => {
   for (let i = 0; i < npmLicenses.length; i++) {
     if (npmLicenses[i].npmName === licenses[0]) {
@@ -99,8 +99,8 @@ ${test}
 ### ❓ Questions
 
 Checkout my github profile below 👇
-* GitHub: ${github}
-* GitLink: ${gitlink}
+* GitHub Name: ${github}
+* GitHub Link: [Follow link here](${gitlink})
 
 ---
 
@@ -113,7 +113,7 @@ This project is not licensed
 
 ----
 
-${licenses}:
+### ${licenses}:
 * Donwloads: ${info.downloads}
 * License: ${info.license}
     `;
@@ -176,7 +176,7 @@ inquirer
   ])
   .then((response) => {
     const newReadMe = generateReadMe(response);
-    fs.writeFile('ReadMe.md', newReadMe, (err) => {
+    fs.writeFile('ReadMe_test.md', newReadMe, (err) => {
       err ? console.error(err) : console.log('Success 🎉!');
     });
   });
